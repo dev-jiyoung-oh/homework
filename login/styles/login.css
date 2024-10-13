@@ -107,6 +107,7 @@
   inline-size: 100%;
   background-color: var(--button-background-color);
   margin-block: 0.625rem;
+  cursor: pointer;
 }
 
 /* 로그인 상태 유지 */
