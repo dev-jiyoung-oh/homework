@@ -1,0 +1,163 @@
+@import "./../../common/a11y.css";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+
+:root {
+  --default-size: 1rem;
+  --strong-weight: 600;
+
+  --white: #fff;
+  --red: #ff1414;
+  --gray-1: #dadada;
+  --gray-2: #e9f0fd;
+  --gray-3: #999999;
+  --blue: #24388d;
+  --green: #03cf5d;
+  --dark: #121212;
+
+  --default-color: var(--dark);
+  --default-border-color: var(--gray-1);
+  --default-background-color: var(--white);
+  --focus-color: var(--blue);
+  --focus-border-color: var(--green);
+  --focus-background-color: var(--gray-2);
+  --error-color: var(--red);
+  --button-font-color: var(--white);
+  --button-background-color: var(--green);
+}
+
+* {
+  font-family: "Spoqa Han Sans Neo", "Spoqa Han Sans JP", sans-serif;
+  font-size: var(--default-size);
+  color: var(--default-color);
+  text-decoration: none;
+}
+:focus {
+  outline-color: var(--focus-color);
+}
+
+/* 로그인 컨테이너 */
+.login-container {
+  width: 100%;
+  inline-size: 100%;
+  box-sizing: border-box;
+  padding: 1.25rem;
+
+  @media (min-width: 768px) {
+    width: 500px;
+    inline-size: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+  }
+}
+
+/* 로고 */
+.brand {
+  inline-size: 14.375rem;
+  margin-inline: auto;
+  margin-block: 4.5rem;
+
+  a,
+  svg {
+    display: block;
+  }
+}
+
+/* input */
+.login__input-id,
+.login__input-password {
+  font-size: 0.875rem;
+  inline-size: 100%;
+  box-sizing: border-box;
+  line-height: 2.8125rem;
+  margin-block: 0.3125rem;
+  padding-inline: 1rem;
+  border: 0.0625rem solid var(--default-border-color);
+  background-color: var(--input-background-color);
+}
+.login__input-id:focus,
+.login__input-password:focus {
+  outline: none;
+  border: 0.0625rem solid var(--focus-border-color);
+  background-color: var(--focus-background-color);
+}
+
+/* input 에러 메시지 */
+.login__id-error,
+.login__password-error {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--error-color);
+  padding: 0 1rem 0.5rem;
+}
+.login__input-id:user-invalid + .login__id-error,
+.login__input-password:user-invalid + .login__password-error {
+  display: block;
+}
+
+/* 로그인 버튼 */
+.login-submit-button {
+  all: unset;
+  font-size: var(--default-size);
+  font-weight: var(--strong-weight);
+  line-height: 2.8125rem;
+  color: var(--button-font-color);
+  text-align: center;
+  inline-size: 100%;
+  background-color: var(--button-background-color);
+  margin-block: 0.625rem;
+}
+
+/* 로그인 상태 유지 */
+.keep-check {
+  display: flex;
+  float: right;
+  align-items: center;
+
+  .login__input-keep-check {
+    margin: 0;
+    width: 1.5rem;
+    inline-size: 1.5rem;
+    height: 1.5rem;
+    block-size: 1.5rem;
+    margin-right: 0.3125rem;
+    margin-inline-end: 0.3125rem;
+    background: url(./../../assets/login/unchecked.svg) no-repeat center / 100%;
+    appearance: none;
+    cursor: pointer;
+  }
+  .login__input-keep-check:checked {
+    background: url(./../../assets/login/checked.svg) no-repeat center / 100%;
+  }
+  .login__label-keep-check {
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    float: left;
+  }
+}
+
+/* IP 보안 */
+.ip-security-check {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    float: right;
+
+    .login__label-ip-security-check {
+      color: var(--gray-3);
+      font-weight: var(--strong-weight);
+      cursor: pointer;
+    }
+    .login__input-ip-security-check + .login__label-ip-security-check::after {
+      content: "OFF";
+    }
+    .login__input-ip-security-check:checked + .login__label-ip-security-check::after {
+      content: "ON";
+      color: var(--green);
+    }
+  }
+}
