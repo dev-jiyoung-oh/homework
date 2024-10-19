@@ -1,0 +1,68 @@
+@import "./reset.css";
+@import "./base.css";
+@import "./theme.css";
+@import "./card-component.css";
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--small-spacing);
+}
+
+.product {
+  @media (max-resolution: 1x) {
+    &.ipad-pro {
+      background-image: url("./../../assets/apple/products/ipad_pro.jpeg");
+    }
+    &.ipad-air {
+      background-image: url("./../../assets/apple/products/ipad_air_wide.jpeg");
+    }
+    &.iphone-15-pro {
+      background-image: url("./../../assets/apple/products/iphone15_pro.jpeg");
+
+      @media (width >= 64rem) {
+        background-image: url("./../../assets/apple/products/iphone15_pro_wide.jpeg");
+      }
+    }
+    &.iphone-15 {
+      background-image: url("./../../assets/apple/products/iphone15.jpeg");
+    }
+    &.watch {
+      background-image: url("./../../assets/apple/products/apple_watch.jpeg");
+    }
+    &.macbook-air {
+      background-image: url("./../../assets/apple/products/macbook_air.jpeg");
+    }
+    &.airpods-pro {
+      background-image: url("./../../assets/apple/products/airpods_pro.jpeg");
+    }
+  }
+
+  @media (min-resolution: 2x) {
+    &.ipad-pro {
+      background-image: url("./../../assets/apple/products/ipad_pro_2x.jpeg");
+    }
+    &.ipad-air {
+      background-image: url("./../../assets/apple/products/ipad_air_wide_2x.jpeg");
+    }
+    &.iphone-15-pro {
+      background-image: url("./../../assets/apple/products/iphone15_pro_2x.jpeg");
+
+      @media (width >= 64rem) {
+        background-image: url("./../../assets/apple/products/iphone15_pro_wide_2x.jpeg");
+      }
+    }
+    &.iphone-15 {
+      background-image: url("./../../assets/apple/products/iphone15_2x.jpeg");
+    }
+    &.watch {
+      background-image: url("./../../assets/apple/products/apple_watch_2x.jpeg");
+    }
+    &.macbook-air {
+      background-image: url("./../../assets/apple/products/macbook_air_2x.jpeg");
+    }
+    &.airpods-pro {
+      background-image: url("./../../assets/apple/products/airpods_pro_2x.jpeg");
+    }
+  }
+}

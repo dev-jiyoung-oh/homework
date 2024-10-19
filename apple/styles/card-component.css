@@ -1,0 +1,127 @@
+.product {
+  grid-column: span 2;
+  height: var(--size);
+  font-weight: var(--base-weight);
+  text-align: center;
+  padding-top: var(--large-spacing);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  /* 테마 */
+  &.theme-blue {
+    color: var(--white);
+
+    .product-btn {
+      &.btn-default {
+        color: var(--white);
+        background-color: var(--blue-200);
+        border: 1px solid var(--blue-200);
+
+        &:hover {
+          background-color: var(--blue-100);
+        }
+      }
+      &.btn-outline {
+        color: var(--blue-200);
+        background: none;
+        border: 1px solid var(--blue-200);
+
+        &:hover {
+          color: var(--blue-100);
+          border: 1px solid var(--blue-100);
+        }
+      }
+    }
+  }
+  &.theme-black {
+    color: var(--black);
+
+    .product-btn {
+      &.btn-default {
+        color: var(--white);
+        background-color: var(--black);
+        border: 1px solid var(--black);
+
+        &:hover {
+          background-color: var(--blue-200);
+          border: 1px solid var(--blue-200);
+        }
+      }
+      &.btn-outline {
+        color: var(--black);
+        background-color: none;
+        border: 1px solid var(--black);
+
+        &:hover {
+          color: var(--blue-100);
+          border: 1px solid var(--blue-200);
+        }
+      }
+    }
+  }
+}
+
+.product-name {
+  font-weight: var(--bold-weight);
+  font-size: var(--large-text);
+  margin-block: var(--small-spacing);
+}
+
+.product-description {
+  font-size: var(--base-text);
+  line-height: var(--line-normal);
+  margin-block: var(--x-small-spacing);
+
+  span {
+    display: block;
+  }
+}
+
+.product-open {
+  font-size: var(--small-text);
+  color: var(--gray);
+}
+
+.product-btn-wrap {
+  display: flex;
+  justify-content: center;
+  column-gap: var(--small-spacing);
+  margin-block: var(--small-spacing);
+
+  .product-btn {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--xx-small-text);
+    border-radius: 1rem;
+    padding: var(--x-small-spacing) var(--small-spacing);
+  }
+}
+
+/* 반응형 */
+@media (width >= 64rem) {
+  .product {
+    padding-top: var(--extra-large-spacing);
+
+    .product-name {
+      font-size: var(--extra-large-text);
+    }
+
+    .product-description {
+      font-size: var(--medium-text);
+
+      span {
+        display: inline;
+      }
+    }
+
+    .product-btn {
+      font-size: var(--x-small-text);
+    }
+
+    &.product-small {
+      grid-column: span 1;
+    }
+  }
+}
