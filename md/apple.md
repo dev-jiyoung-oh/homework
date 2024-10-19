@@ -45,15 +45,15 @@
   background-size: cover;
   background-position: center;
 
-  ...
+  /* ... */
 
   /* 테마 */
   &.theme-blue {
     color: var(--white);
 
     .product-btn {
-      &.btn-default {...}
-      &.btn-outline {...}
+      &.btn-default {/* ... */}
+      &.btn-outline {/* ... */}
     }
   }
 }
@@ -62,7 +62,7 @@
 @media (width >= 64rem) {
   .product {
     .product-description {
-      ...
+      /* ... */
       span {
         display: inline;
       }
@@ -71,7 +71,7 @@
     &.product-small {
       grid-column: span 1;
     }
-    ...
+    /* ... */
   }
 }
 ```
@@ -97,7 +97,7 @@
         background-image: url("./../../assets/apple/products/iphone15_pro_wide.jpeg");
       }
     }
-    ...
+    /* ... */
   }
 
   @media (min-resolution: 2x) {
@@ -111,7 +111,7 @@
         background-image: url("./../../assets/apple/products/iphone15_pro_wide_2x.jpeg");
       }
     }
-    ...
+    /* ... */
   }
 }
 ```
